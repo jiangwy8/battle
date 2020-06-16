@@ -1,0 +1,45 @@
+server:
+   port: 9999
+ribbon:
+   ReadTimeout: 60000
+   ConnectTimeout: 60000
+spring:
+   jackson:
+      serialization:
+         write-dates-as-timestamps: true
+      time-zone: GMT+8
+   mvc:
+      throw-exception-if-no-handler-found: true
+   resources:
+      add-mappings: false
+   datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:log4jdbc:mysql://127.0.0.1:3306/battle?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
+      driver-class-name: net.sf.log4jdbc.DriverSpy
+      filters: stat,wall
+      maxActive: 200
+      initialSize: 1
+      maxWait: 120000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 120000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 200
+   servlet:
+      multipart:
+         max-file-size: 100MB
+         max-request-size: 100MB
+connectProperties:
+   druid:
+      stat:
+         mergeSql: false
+         logSlowSql: true
+         slowSqlMillis: 2000
+swagger:
+   enable: true
