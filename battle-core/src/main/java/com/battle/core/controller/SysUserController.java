@@ -70,7 +70,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "根据bigBaseType获取类型信息", actionType = "4")
     @ApiOperation(value = "根据bigBaseType获取类型信息", notes = "根据bigBaseType获取类型信息")
     @PostMapping(value = "basetype/getListByBigBasetype")
     public ResponseEntity<AResultSet<List<BasetypeWriteVO>>> getListByBigBasetype(String bigBaseType) {
@@ -83,7 +82,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "创建类型", actionType = "1")
     @ApiOperation(value = "创建类型", notes = "创建类型信息")
     @PostMapping(value = "basetype/add")
     @Transactional
@@ -97,7 +95,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "删除类型", actionType = "3")
     @ApiOperation(value = "删除类型", notes = "根据类型id来指定删除类型")
     @PostMapping(value = "basetype/delete")
     @Transactional
@@ -111,7 +108,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "更新类型信息", actionType = "2")
     @ApiOperation(value = "更新类型信息", notes = "修改类型信息")
     @PostMapping(value = "basetype/edit")
     @Transactional
@@ -125,7 +121,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "上传类型信息", actionType = "1")
     @ApiOperation(value = "上传类型信息", notes = "上传类型信息")
     @PostMapping(value = "basetype/import", consumes = "multipart/*", headers = "content-type=multipart/form-data")
     @Transactional
@@ -140,7 +135,6 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      * @param
      * @return
      */
-    @SystemControllerLog(descrption = "下载类型详细信息", actionType = "4")
     @ApiOperation(value = "下载类型详细信息", notes = "获取类型详细信息")
     @PostMapping(value = "basetype/export")
     public void exportExcel(@RequestBody BasetypeSearchVO basetype, HttpServletRequest request,
@@ -159,8 +153,7 @@ public class SysUserController extends BaseController<SysUser,ISysUserService> {
      *
      * @param
      * @return
-     */
-    @SystemControllerLog(descrption = "下载类型模板", actionType = "4")
+     */ 
     @ApiOperation(value = "下载类型模板", notes = "下载类型模板")
     @PostMapping(value = "basetype/template")
     public void template(HttpServletRequest request, HttpServletResponse response) {
